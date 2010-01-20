@@ -8,9 +8,9 @@
   	<meta http-equiv='content-Language' content='pt-BR' /> 
 {% endblock meta %}
   	<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />  
-  	{% block title %}
-	<title>PythonCampus</title>
-        {% endblock title %}
+  	
+        <title>{% block subtitle %}{% endblock subtitle %} &raquo; PythonCampus.org</title>
+        
 	<link type="text/css" href="{{ MEDIA_URL }}css/styles.css" rel="stylesheet" media="screen" />
 	<link type="text/css" href="{{ MEDIA_URL }}css/print.css" rel="stylesheet" media="print" />
 	

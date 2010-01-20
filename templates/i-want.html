@@ -1,12 +1,11 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
- 
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Eu quero uma PythonCampus!</title>
-    </head>
-    <body>
+{% extends "base.html" %}
+
+{% block subtitle %}Eu quero uma PythonCampus!{% endblock subtitle %}
+
+{% block content %}
+	<h1>Eu quero uma PythonCampus na minha Universidade!</h1>
+	<p>PythonCampus é uma iniciativa de um grupo de pessoas apaixonadas por tecnologia que deseja levar um pouco de seu conhecimento e experiência para dentro do meio acadêmico e formar pensadores.</p>
+	<p>Para fazermos uma PythonCampus de arrebentar, precisamos de muito pouco. Preencha os campos abaixo para que possamos conversar e fazermos a próxima PythonCampus em sua universidade.</p>
         <div id="form">
             <script type="text/javascript">
                 var host = (("https:" == document.location.protocol) ? "https://secure." : "http://");
@@ -22,6 +21,4 @@
                 z7x4z5.display();
             </script>
         </div>
-    </body>
-</html>
-
+{% endblock content %}
