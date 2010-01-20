@@ -1,0 +1,192 @@
+/*
+CSS
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font: .625em Arial, Helvetica, Sans-serif;
+  background: #e9e9e9 url(../images/bg.png) repeat-y center top;
+}
+
+#page {
+  margin: 0 auto;
+  padding: 20px 0 0 0;
+  width: 960px;
+  font-size: 1.2em;
+  background-color: #fff;
+}
+
+/*
+General
+*/
+
+p {
+	margin: 1.4em 0;
+	padding: 0;
+	line-height: 1.4em;
+}
+
+img {
+	border: 0;
+}
+
+hr {
+	display: none;
+}
+
+a,
+a:link,
+a:active,
+a:visited {
+	color: #66ACC6;
+	text-decoration: none;
+	border-bottom: 1px dotted #66ACC6;
+}
+
+a:hover {
+	border-bottom: 1px solid #66ACC6;
+}
+
+
+/*
+Headers
+*/
+
+h1,
+h2,
+h3,
+h4 {
+	line-height: 1.286;
+	margin: .4em 0;
+	padding: 0;
+	font: .625em Arial, Helvetica, Sans-serif;
+}
+
+h1 {
+	font-weight: normal;
+	font-size: 2.2em;
+	text-align: left; 		
+	color: #831A00;
+} 
+ 
+h2 {
+	margin: .643em 0;
+	font-weight: normal;
+	font-size: 1.8em; 
+	color: #E6AC0C;
+	font-style: italic;
+}
+
+h3 {
+	margin: .643em 0;
+	font-weight: normal;
+	font-size: 1.6em; 
+	color: #5f6972;
+}  
+
+h4 {
+	margin: .643em 0;
+	font-weight: normal;
+	font-size: 1.4em; 
+	color: #5f6972;
+}  
+
+
+/*
+Header
+*/
+
+#header {
+  height: 110px;
+  border-bottom: 1px dotted #ccc;
+}
+
+#header #logo {
+  margin: 0 0 0 16px;
+}
+
+#header #logo a {
+  border: none;
+  color: #3f72a6;
+  font-size: 3.6em;
+  font-weight: bold;
+  font-family: verdana, arial, sans-serif;
+  letter-spacing:-4px;
+}
+
+#header #logo a span {
+  color: #66ACC6;
+}
+
+#header ul#menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0 20px;
+}
+
+#header ul#menu li {
+  float: left;
+}
+
+#header ul#menu li a {
+  display: block;
+  border: none;
+  font-size: 1.8em;
+  font-weight:bold;
+  letter-spacing: -1px;
+  padding: 2px 30px 0 0;
+}
+
+#header ul#menu li.eu-quero {
+  float: right;
+}
+
+#header ul#menu li.eu-quero a {
+  font-size: 2.8em;
+  color: #E6AC0C;
+}
+
+/*
+Content
+*/
+
+#content {
+  margin: 0 20px;
+  font-size: 1.2em;
+ 	font-family: Georgia, Palatino, "Palatino Linotype", Times, serif;
+}
+
+/*
+Footer
+*/
+
+#footer {
+  clear: both;
+  padding: 10px 20px;
+  height: 60px;
+  border-top: 8px solid #87C6DD;
+  background-color: #508396;
+  color: #fff;
+}
+
+#footer a {
+  color: #bbeffb;
+}
+
+#footer p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+#footer ul#menu-footer {
+  list-style-type: none;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+
+#footer ul#menu-footer li {
+  display: inline;
+  padding: 0 10px 0 0;
+}
