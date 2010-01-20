@@ -4,14 +4,19 @@ import sys
 import os
 
 from fabric.api import *
-
-env.hosts = ['pythoncampus.org']
-env.user = 'pythoncampus'
+from fabric.contrib.files import upload_template
 
 
 def setup():
     run('mkdir -p ~/srv')
-    # TODO: render template for local_settings.py on remote server
+    prompt('What database engine?', 'db_engine', 'mysql')
+    prompt('What database name?', 'db_name', 'pythoncampus')
+    prompt('What database host?', 'db_host')
+    prompt('What database user?', 'db_user')
+    prompt('What database password?', 'db_passwd')
+
+    upload_template('project/local_settings.example',
+        '~/srv/local_settings.py', env)
 
 ##
 # Entry-point commands
@@ -71,3 +76,5 @@ def set_current(stamp):
     "Set a deploy_moment as the current one"
     run('rm -f pythoncampus.org')
     run('ln -s ~/srv/%s pythoncampus.org' % stamp)
+    run('rm -f pythoncampus.org/local_settings.py')
+    run('ln -s ~/srv/local_settings.py ~/pythoncampus.org/project/local_settings.py')
