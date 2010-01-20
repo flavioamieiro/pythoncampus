@@ -163,11 +163,32 @@ Footer
 
 #footer {
   clear: both;
-  padding: 10px 20px;
   height: 60px;
+  padding: 10px 20px;
   border-top: 8px solid #87C6DD;
   background-color: #508396;
   color: #fff;
+}
+
+#footer #info {
+  float: right;
+  text-align: right;
+}
+
+#footer ul#social {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+#footer ul#social li {
+  display: inline;
+  margin: 0 4px 0 0;
+}
+
+#footer ul#social li a {
+  border: none;
 }
 
 #footer a {
@@ -188,5 +209,5 @@ Footer
 
 #footer ul#menu-footer li {
   display: inline;
-  padding: 0 10px 0 0;
+  padding: 0 0 0 10px;
 }
