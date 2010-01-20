@@ -38,6 +38,7 @@ def deploy(**kwargs):
     upload_project(rev, stamp)
     set_current(stamp)
     #migrate()
+    run('pkill python')
     
     # Tag the deployed revision
     local("git tag -a deploy/%s %s -m ''" % (stamp, rev))
