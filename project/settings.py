@@ -4,6 +4,10 @@
 from os.path import abspath, dirname, join, pardir
 PROJECT_ROOT = abspath(join(dirname(__file__), pardir))
 
+ADMINS = (
+    ('Admin PythonCampus', 'admin@pythoncampus.org'),
+)
+
 MANAGERS = ADMINS
 
 # Local time zone for this installation. Choices can be found here:
