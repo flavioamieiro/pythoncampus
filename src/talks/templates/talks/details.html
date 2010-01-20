@@ -1,3 +1,8 @@
+{% extends "base.html" %}
+
+{% block subtitle %}{{ talk.title }}{% endblock subtitle %}
+
+{% block content %}
 <div>
     <h2>{{ talk.title }}</h2>
     <span>{{ talk.day|date:"d/m/Y"}} - {{talk.start_time|time:"H:i" }}</span> <span>duração: {{ talk.duration }}</span>
@@ -8,3 +13,4 @@
         <address>{{ talk.speaker_name }}</address>
     {% endif %}
 </div>
+{% endblock content %}

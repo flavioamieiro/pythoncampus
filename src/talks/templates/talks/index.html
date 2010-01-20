@@ -1,3 +1,8 @@
+{% extends "base.html" %}
+
+{% block subtitle %}Palestras{% endblock subtitle %}
+
+{% block content %}
 {% for talk in talks %}
         <div>
             <h2> <a href="{% url details talk.day.year,talk.day.month,talk.day.day,talk.slug %}">{{ talk.title }}</a></h2>
@@ -10,3 +15,4 @@
             {% endif %}
         </div>
 {% endfor %}
+{% endblock content %}
