@@ -1,0 +1,8 @@
+{% for talk in talks %}
+        <div>
+            <h2> {{ talk.title }} </h2>
+            <span>{{ talk.start_time }}</span> <span>{{ talk.duration }}</span>
+            <p>{{ talk.description }}</p>
+            <address><a href="{{ talk.speaker_site }}">{{ talk.speaker_name }}</a></address>
+        </div>
+{% endfor %}
