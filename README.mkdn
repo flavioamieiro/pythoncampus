@@ -6,10 +6,10 @@ This project contains the source code for the [PythonCampus.org][pc] website.
 
 1. Create a [Virtualenv][v] for the project:
 
-    mkdir -p ~/pythoncampus
-    cd ~/pythoncampus
-    virtualenv --no-site-packages --unzip-setuptools .
-    source ./bin/activate
+        mkdir -p ~/pythoncampus
+        cd ~/pythoncampus
+        virtualenv --no-site-packages --unzip-setuptools .
+        source ./bin/activate
     
 2. Install [Pip][p], [iPython][ip] and [Django][d]:
 
