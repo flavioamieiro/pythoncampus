@@ -5,8 +5,10 @@ from django.db import models
 class Talk(models.Model):
 
     title = models.CharField(max_length=200)
+    slug = models.SlugField()
     description = models.TextField()
-    start_time = models.DateTimeField(blank=True)
+    day = models.DateField(blank=True)
+    start_time = models.TimeField(blank=True)
     duration = models.CharField(max_length=20, blank=True)
     place = models.CharField(max_length=20, blank=True)
     speaker_name = models.CharField(max_length=75)

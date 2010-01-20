@@ -1,1 +1,1 @@
-from test_view import TalksView
+from test_view import *
