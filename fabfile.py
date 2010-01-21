@@ -64,22 +64,22 @@ def _upload_project(rev, stamp):
     """
     package = '%s.zip' % stamp
 
-    # put it on the server
     # Create a zip package with a specified revision.
     local('git archive --format=zip --output=%s --prefix=%s/ %s' % \
         (package, stamp, rev))
 
+    # Put the package on the server.
     put(package, '~/srv/%s' % package)
 
-    # unpack it
+    # Unpack it on the server.
     with cd('~/srv'):
         run('unzip %s' % stamp)
         run('rm %s' % package)
-    
-    # local cleanup
+
+    # Delete the local zip file
     local('rm %s' % package)
 
-        
+
 def migrate():
     "Runs the project's migrations"
     require('project_dir', 'active_project', 'deploy_moment')
