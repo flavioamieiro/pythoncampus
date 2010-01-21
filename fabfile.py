@@ -94,8 +94,12 @@ def server_migrate():
     """
     Run syncdb and migrate command on the server
     """
-    with cd('~/pythoncampus.org'):
-        run('./scripts/remote_migrate')
+    root = '~/pythoncampus.org'
+    with cd(root):
+        run("""
+            PYTHONPATH=%s/src:%s/lib:%s && \
+            python manage.py syncdb --noinput && python manage.py migrate
+            """)
 
 
 def server_reload():
