@@ -96,3 +96,10 @@ def _activate_package(stamp):
     run('ln -s ~/srv/%s pythoncampus.org' % stamp)
     run('rm -f pythoncampus.org/project/local_settings.py')
     run('ln -s ~/srv/local_settings.py ~/pythoncampus.org/project/local_settings.py')
+
+
+def server_reload():
+    """
+    Reload Dreamhost's webserver to avoid cache problems.
+    """
+    run('pkill python')
