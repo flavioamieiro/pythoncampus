@@ -80,9 +80,10 @@ def _upload_project(rev, stamp):
     local('rm %s' % package)
 
 
-def migrate():
-    "Runs the project's migrations"
-    require('project_dir', 'active_project', 'deploy_moment')
+def server_migrate():
+    """
+    Run syncdb and migrate command on the server
+    """
     with cd('~/pythoncampus.org'):
         run('./scripts/remote_migrate')
 
