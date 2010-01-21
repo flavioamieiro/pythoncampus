@@ -7,6 +7,11 @@ from fabric.api import *
 from fabric.contrib.files import upload_template
 
 
+# Set the working directory to the root of our repo,
+# assuming that fabfile is on it.
+os.chdir(os.path.dirname(__file__))
+
+
 def setup_server():
     """
     Setup a host server. Run this once before the first deploy.
@@ -53,18 +58,18 @@ def deploy(**kwargs):
     local("git push --tags")
 
 
-    # create the local package
-    dirname = os.path.dirname(__file__)
 def _upload_project(rev, stamp):
     """
     Upload a specified revision to the server
     """
     package = '%s.zip' % stamp
-    local('cd %s && git archive --format=zip --output=%s --prefix=%s/ %s' % \
-        (dirname, package, stamp, rev))
 
     # put it on the server
     run('mkdir -p ~/srv')
+    # Create a zip package with a specified revision.
+    local('git archive --format=zip --output=%s --prefix=%s/ %s' % \
+        (package, stamp, rev))
+
     put(package, '~/srv/%s' % package)
 
     # unpack it
