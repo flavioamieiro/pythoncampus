@@ -53,10 +53,12 @@ def deploy(**kwargs):
     local("git push --tags")
 
 
-def upload_project(rev, stamp):
-    "Upload project source code to the server"
     # create the local package
     dirname = os.path.dirname(__file__)
+def _upload_project(rev, stamp):
+    """
+    Upload a specified revision to the server
+    """
     package = '%s.zip' % stamp
     local('cd %s && git archive --format=zip --output=%s --prefix=%s/ %s' % \
         (dirname, package, stamp, rev))
