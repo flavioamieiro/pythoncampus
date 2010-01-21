@@ -7,14 +7,22 @@ from fabric.api import *
 from fabric.contrib.files import upload_template
 
 
-def setup():
+def setup_server():
+    """
+    Setup a host server. Run this once before the first deploy.
+    """
+    # Create the directory that will store deployed packages.
+    # Assume we'll have only one project per Dreamhost user.
     run('mkdir -p ~/srv')
+
+    # Prompt for database configurations.
     prompt('What database engine?', 'db_engine', 'mysql')
     prompt('What database name?', 'db_name', 'pythoncampus')
     prompt('What database host?', 'db_host')
     prompt('What database user?', 'db_user')
     prompt('What database password?', 'db_passwd')
 
+    # Render local_settings.py with specific server configurations.
     upload_template('project/local_settings.example',
         '~/srv/local_settings.py', env)
 
