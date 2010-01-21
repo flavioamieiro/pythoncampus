@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls.defaults import *
 from django.contrib import admin
 
@@ -25,3 +26,9 @@ urlpatterns+= patterns('django.views.generic.simple',
 
     (r'^contato/$', 'direct_to_template', {'template': 'contact.html'}),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        (r'^media/(?P<path>.*)$', 'django.views.static.serve',
+            {'document_root': settings.MEDIA_ROOT}),
+    )
