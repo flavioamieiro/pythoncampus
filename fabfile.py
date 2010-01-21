@@ -65,7 +65,6 @@ def _upload_project(rev, stamp):
     package = '%s.zip' % stamp
 
     # put it on the server
-    run('mkdir -p ~/srv')
     # Create a zip package with a specified revision.
     local('git archive --format=zip --output=%s --prefix=%s/ %s' % \
         (package, stamp, rev))
