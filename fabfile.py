@@ -94,5 +94,5 @@ def _activate_package(stamp):
     """
     run('rm -f pythoncampus.org')
     run('ln -s ~/srv/%s pythoncampus.org' % stamp)
-    run('rm -f pythoncampus.org/local_settings.py')
+    run('rm -f pythoncampus.org/project/local_settings.py')
     run('ln -s ~/srv/local_settings.py ~/pythoncampus.org/project/local_settings.py')
