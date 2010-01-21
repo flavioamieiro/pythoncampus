@@ -80,14 +80,6 @@ def _upload_project(rev, stamp):
     local('rm %s' % package)
 
 
-def server_migrate():
-    """
-    Run syncdb and migrate command on the server
-    """
-    with cd('~/pythoncampus.org'):
-        run('./scripts/remote_migrate')
-
-
 def _activate_package(stamp):
     """
     Set the server symlink to a specific uploaded package.
@@ -96,6 +88,14 @@ def _activate_package(stamp):
     run('ln -s ~/srv/%s pythoncampus.org' % stamp)
     run('rm -f pythoncampus.org/project/local_settings.py')
     run('ln -s ~/srv/local_settings.py ~/pythoncampus.org/project/local_settings.py')
+
+
+def server_migrate():
+    """
+    Run syncdb and migrate command on the server
+    """
+    with cd('~/pythoncampus.org'):
+        run('./scripts/remote_migrate')
 
 
 def server_reload():
