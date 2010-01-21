@@ -88,8 +88,10 @@ def server_migrate():
         run('./scripts/remote_migrate')
 
 
-def set_current(stamp):
-    "Set a deploy_moment as the current one"
+def _activate_package(stamp):
+    """
+    Set the server symlink to a specific uploaded package.
+    """
     run('rm -f pythoncampus.org')
     run('ln -s ~/srv/%s pythoncampus.org' % stamp)
     run('rm -f pythoncampus.org/local_settings.py')
