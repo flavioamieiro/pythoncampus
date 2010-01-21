@@ -31,28 +31,28 @@ def setup_server():
     upload_template('project/local_settings.example',
         '~/srv/local_settings.py', env)
 
-##
-# Entry-point commands
-##
-def deploy(**kwargs):
-    "Deploy the contents of a given revision"
-    if 'rev' in kwargs:
-        rev = kwargs['rev']
-    else:
+
+def deploy(rev):
+    """
+    Deploy a given project revision to the server.
+    """
+    if not rev:
         print 'ERROR: No revision given. Cannot deploy.'
         print 'To deploy the current revision, use the following command:'
         print '$ fab deploy:rev=`git rev-parse HEAD`'
         sys.exit(1)
 
+    # Create a stap based on local time.
     stamp = time.strftime("%Y%m%d-%Hh%Mm%Ss")
 
+    # Before deployment, run the tests locally.
     #run_test()
 
-    upload_project(rev, stamp)
-    set_current(stamp)
-    #migrate()
-    run('pkill python')
-    
+    # Deploy
+    _upload_project(rev, stamp)
+    _activate_package(stamp)
+    #server_migrate()
+
     # Tag the deployed revision
     local("git tag -a deploy/%s %s -m ''" % (stamp, rev))
     local("git push --tags")
