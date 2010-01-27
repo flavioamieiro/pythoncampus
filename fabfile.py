@@ -7,6 +7,10 @@ from fabric.api import *
 from fabric.contrib.files import upload_template
 
 
+# Remote directory monitored by Dreamhost's passenger
+env.server_site = '~/pythoncampus.org'
+env.server_source = '~/srv'
+
 # Set the working directory to the root of our repo,
 # assuming that fabfile is on it.
 os.chdir(os.path.dirname(__file__))
@@ -18,7 +22,7 @@ def setup_server():
     """
     # Create the directory that will store deployed packages.
     # Assume we'll have only one project per Dreamhost user.
-    run('mkdir -p ~/srv')
+    run("mkdir -p %(server_source)s" % env)
 
     # Prompt for database configurations.
     prompt('What database engine?', 'db_engine', 'mysql')
@@ -28,14 +32,16 @@ def setup_server():
     prompt('What database password?', 'db_passwd')
 
     # Render local_settings.py with specific server configurations.
-    upload_template('project/local_settings.example',
-        '~/srv/local_settings.py', env)
+    server_local_settings = "%(server_source)s/local_settings.py" % env
+    upload_template('project/local_settings.example', 
+        server_local_settings, env)
 
 
-def deploy(rev):
+def deploy(**kwargs):
     """
     Deploy a given project revision to the server.
     """
+    rev = kwargs.get('rev')
     if not rev:
         print 'ERROR: No revision given. Cannot deploy.'
         print 'To deploy the current revision, use the following command:'
@@ -62,6 +68,7 @@ def _upload_project(rev, stamp):
     """
     Upload a specified revision to the server
     """
+    require('server_source')
     package = '%s.zip' % stamp
 
     # Create a zip package with a specified revision.
@@ -69,12 +76,13 @@ def _upload_project(rev, stamp):
         (package, stamp, rev))
 
     # Put the package on the server.
-    put(package, '~/srv/%s' % package)
+    server_package = os.path.join(env.server_source, package)
+    put(package, server_package)
 
     # Unpack it on the server.
-    with cd('~/srv'):
+    with cd(env.server_source):
         run('unzip %s' % stamp)
-        run('rm %s' % package)
+        run('rm %s' % server_package)
 
     # Delete the local zip file
     local('rm %s' % package)
@@ -84,22 +92,24 @@ def _activate_package(stamp):
     """
     Set the server symlink to a specific uploaded package.
     """
-    run('rm -f pythoncampus.org')
-    run('ln -s ~/srv/%s pythoncampus.org' % stamp)
-    run('rm -f pythoncampus.org/project/local_settings.py')
-    run('ln -s ~/srv/local_settings.py ~/pythoncampus.org/project/local_settings.py')
+    require('server_site', 'server_source')
+    run('rm -f %(server_site)s' % env)
+    stamp_source = os.path.join(env.server_source, stamp)
+    run('ln -s %s %s' % (stamp_source, env.server_site))
+    run('rm -f %(server_site)s/project/local_settings.py' % env)
+    run('ln -s %(server_source)s/local_settings.py %(server_site)s/project/local_settings.py' % env)
 
 
 def server_migrate():
     """
     Run syncdb and migrate command on the server
     """
-    root = '~/pythoncampus.org'
-    with cd(root):
+    require('server_site')
+    with cd(env.server_site):
         run("""
             PYTHONPATH=%s/src:%s/lib:%s && \
             python manage.py syncdb --noinput && python manage.py migrate
-            """)
+            """ % (env.server_site,) * 3 )
 
 
 def server_reload():
