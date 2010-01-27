@@ -127,15 +127,14 @@ Header
 
 #header ul#menu li {
   float: left;
-}
-
-#header ul#menu li a {
-  display: block;
-  border: none;
   font-size: 1.8em;
   font-weight:bold;
   letter-spacing: -1px;
   padding: 2px 30px 0 0;
+}
+
+#header ul#menu li a {
+  border: none;
 }
 
 #header ul#menu li.eu-quero {
