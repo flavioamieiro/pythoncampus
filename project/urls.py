@@ -11,7 +11,7 @@ urlpatterns = patterns('',
 )
 
 urlpatterns+= patterns('django.views.generic.simple',
-    (r'^$', 'direct_to_template', {'template': 'about.html'}),
+    (r'^$', 'direct_to_template', {'template': 'sobre.html'}),
 
     (r'^sobre/$', 'direct_to_template', {'template': 'sobre.html'}),
 
