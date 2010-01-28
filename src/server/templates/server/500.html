@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block subtitle %}500 Server Error{% endblock subtitle %}
+
+{% block content %}
+<div id="error">
+	<h3>Pãn! Algo deu errado na <strong>PythonCampus.org</strong>.</h3>
+	<img src="{{ MEDIA_URL }}server/img/500.jpg"/>
+</div>
+{% endblock content %}

@@ -156,6 +156,15 @@ Content
  	font-family: Georgia, Palatino, "Palatino Linotype", Times, serif;
 }
 
+#error {
+    text-align: center;
+}
+
+#error img {
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
 /*
 Footer
 */

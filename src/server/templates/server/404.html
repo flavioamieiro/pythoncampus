@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block subtitle %}404 Not Found{% endblock subtitle %}
+
+{% block content %}
+<div id="error">
+	<h3>Opa! Página não encontrada.</h3>
+	<img src="{{ MEDIA_URL }}server/img/404.jpg"/>
+</div>
+{% endblock content %}
