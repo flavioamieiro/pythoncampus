@@ -76,12 +76,13 @@ h2 {
 	font-size: 1.8em; 
 	color: #E6AC0C;
 	font-style: italic;
+	clear: both;
 }
 
 h3 {
 	margin: .643em 0;
 	font-weight: normal;
-	font-size: 1.6em; 
+	font-size: 1.45em;
 	color: #5f6972;
 }  
 
@@ -163,6 +164,18 @@ Content
 #error img {
     padding: 2px;
     margin-bottom: 10px;
+}
+
+#content ul#team {
+  font-size: 1.45em;
+  color: #66ACC6;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#content ul#team li {
+  padding: 0 4px;
 }
 
 /*
