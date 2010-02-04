@@ -167,7 +167,7 @@ Content
 }
 
 #content ul#team {
-  font-size: 1.45em;
+  font-size: 1.2em;
   color: #66ACC6;
   list-style-type: none;
   margin: 0;
@@ -176,6 +176,11 @@ Content
 
 #content ul#team li {
   padding: 0 4px;
+  height: 27px;
+}
+
+#box-team {
+  height: 400px;
 }
 
 /*
