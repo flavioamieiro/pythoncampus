@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block subtitle %}Oficina de programação{% endblock subtitle %}
+
+{% block content %}
+<style type="text/css">
+div#fotos-da-oficina {
+        margin-bottom: 30px;
+}
+
+div#fotos-da-oficina img {
+        padding: 2px;
+        border: solid 1px lightgrey;
+        margin-right: 5px;
+}
+
+ul#conteudo-programatico {
+		list-style-type: none;
+		margin: 0 0 0 20px;
+		padding: 0;
+}
+
+ul#conteudo-programatico li {
+		padding: 2px 0 2px 13px;
+		background: url('{{ MEDIA_URL }}images/bolinha.gif') no-repeat left center;
+}
+
+ul#conteudo-programatico ul {
+		list-style-type: none;
+		padding: 0 0 0 22px;
+}
+
+ul#conteudo-programatico ul li {
+		background: url('{{ MEDIA_URL }}images/setinha.gif') no-repeat left center;
+}
+</style>
+
+<h1>Oficina de programação</h1>
+<p>A oficina de programação é um espaço onde todos aprendem experimentando!</p>
+<p>O objetivo desse encontro é introduzir a linguagem <a href="http://python.org/">Python</a> a quem ainda não conhece, sempre utilizando exemplos e enfatizando a prática. Enquanto programam, os alunos terão a oportunidade de aprofundar os conceitos que pareceram mais instigantes, ou tirar suas dúvidas com a equipe da PythonCampus. O conhecimento é construído em conjunto!</p>
+<p>Durante a oficina são utilizadas técnicas robustas de desenvolvimento de software, como <em><a href="http://improveit.com.br/xp/praticas/programacao_par">programação em par</a></em>, <em><a href="http://improveit.com.br/xp/praticas/tdd">desenvolvimento orientado a testes</a></em> e <em><a href="http://improveit.com.br/xp/principios/passos_bebe">baby steps</a></em>.</p>
+
+<div id="fotos-da-oficina">
+        <img src="{{ MEDIA_URL }}images/oficina1.jpg" alt="Oficina de programação" />
+        <img src="{{ MEDIA_URL }}images/oficina2.jpg" alt="Oficina de programação" />
+        <img src="{{ MEDIA_URL }}images/oficina3.jpg" alt="Oficina de programação" />
+</div>
+
+<h2>Quando e onde?</h2>
+Sala 2, Bloco B - de <strong>9h</strong> às <strong>12h</strong>.
+
+<h2>Chegue cedo, <span style="color: #da362a; font-weight: bold; font-style: normal">vagas limitadas!</span></h2>
+<p>Não haverá inscrição, as <strong>30</strong> vagas serão preenchidas por ordem de chegada!</p>
+
+<h2>Conteúdo programático</h2>
+<ul id="conteudo-programatico">
+		<li>O que é Python?</li>
+		<li>Características da linguagem</li>
+		<li>Apresentação da sintaxe básica</li>
+		<ul>
+				<li>Estruturas condicionais</li>
+				<li>Estruturas de repetição</li>
+				<li>Funções</li>
+				<li>Estruturas de dados de alto nível: listas, tuplas e dicionários</li>
+		</ul>
+		<li>Programação funcional</li>
+		<li>Criando módulos</li>
+		<li>Trabalhando com arquivos</li>
+		<li>Classes</li>
+		<li>Baterias incluídas: módulos da biblioteca padrão</li>
+		<li>Outras bibliotecas</li>
+</ul>
+
+<h2>Sobre o instrutor</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+{% endblock content %}
