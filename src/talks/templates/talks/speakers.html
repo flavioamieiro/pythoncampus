@@ -1,0 +1,35 @@
+<style type="text/css">
+.left { float: left; }
+.photo { width: 100px; padding: 20px; }
+.desc { width: 80%; font-size: 12pt;  }
+h4 { padding: 0px; font-size: 14pt; }
+#speaker { height: 100%; }
+#speaker ul, #speaker li { padding: 0px; margin: 0px; list-style-type: none; }
+#speaker ul { margin-top: 10px; }
+</style>
+
+
+<div id="speaker">
+
+   <div class="left photo">
+       <img src="{{ talk.speaker.photo.url }}" alt="Foto" width="100" height="110" border="0"/>
+   </div>
+
+   <div class="left desc">
+
+       <h4>{{ talk.speaker.name }}</h4>
+
+       <p>{{ talk.speaker.description }}</p>
+
+       <ul>
+           <li><a href="{{ talk.speaker.site }}" title="Website">{{ talk.speaker.site }}</a></li>
+           <li><a href="mailto:{{ talk.speaker.email }}" title="E-mail">{{ talk.speaker.email }}</a></li>
+       </ul>
+
+   </div>
+
+   <div style="clear:both;"></div>
+
+</div>
+<br/>
+{#% endblock content %#}

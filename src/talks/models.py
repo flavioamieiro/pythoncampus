@@ -2,6 +2,16 @@
 
 from django.db import models
 
+class Speaker(models.Model):
+    name = models.CharField(max_length=75)
+    url = models.URLField(verify_exists=False, blank=True)
+    email = models.EmailField()
+    description = models.TextField()
+    photo = models.ImageField(upload_to='speaker_photos')
+
+    def __unicode__(self):
+        return self.name
+
 class Talk(models.Model):
 
     title = models.CharField(max_length=200)
@@ -11,9 +21,9 @@ class Talk(models.Model):
     start_time = models.TimeField(blank=True)
     duration = models.CharField(max_length=20, blank=True)
     place = models.CharField(max_length=20, blank=True)
-    speaker_name = models.CharField(max_length=75)
-    speaker_site = models.URLField(verify_exists=False, blank=True)
-    speaker_email = models.EmailField()
+    speaker = models.ForeignKey(Speaker)
+
+    media_code = models.TextField()
 
     def __unicode__(self):
-        return "%s - %s" % (self.speaker_name, self.title)
+        return "%s - %s" % (self.speaker.name, self.title)
