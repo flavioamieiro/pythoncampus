@@ -11,6 +11,8 @@ urlpatterns = patterns('',
 
     (r'^palestras/', include('talks.urls')),
     (r'', include('server.urls')),
+    # subscription
+    (r'^', include('subscription.urls')),
 )
 
 urlpatterns+= patterns('django.views.generic.simple',

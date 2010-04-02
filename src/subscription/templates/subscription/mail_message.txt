@@ -1,0 +1,11 @@
+Olá {{ name }}!
+
+Você acabou de se inscrever para participar da PythonCampus.
+
+Para confirmar sua inscrição acesse o link:
+
+{{ activate_url }}
+
+Obrigado!
+--
+PythonCampus.org

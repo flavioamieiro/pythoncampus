@@ -71,6 +71,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'talks',
     'server',
+    'subscription',
 )
 
 try:
