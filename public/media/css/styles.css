@@ -76,12 +76,13 @@ h2 {
 	font-size: 1.8em;
 	color: #E6AC0C;
 	font-style: italic;
+	clear: both;
 }
 
 h3 {
 	margin: .643em 0;
 	font-weight: normal;
-	font-size: 1.6em;
+	font-size: 1.45em;
 	color: #5f6972;
 }
 
@@ -127,15 +128,14 @@ Header
 
 #header ul#menu li {
   float: left;
-}
-
-#header ul#menu li a {
-  display: block;
-  border: none;
   font-size: 1.8em;
   font-weight:bold;
   letter-spacing: -1px;
   padding: 2px 30px 0 0;
+}
+
+#header ul#menu li a {
+  border: none;
 }
 
 #header ul#menu li.eu-quero {
@@ -157,17 +157,64 @@ Content
   font-family: Arial, Georgia, Palatino, "Palatino Linotype", Times, serif;
 }
 
+#error {
+    text-align: center;
+}
+
+#error img {
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+#content ul#team {
+  font-size: 1.2em;
+  color: #66ACC6;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+#content ul#team li {
+  padding: 0 4px;
+  height: 27px;
+}
+
+#box-team {
+  height: 400px;
+}
+
 /*
 Footer
 */
 
 #footer {
   clear: both;
-  padding: 10px 20px;
   height: 60px;
+  padding: 10px 20px;
   border-top: 8px solid #87C6DD;
   background-color: #508396;
   color: #fff;
+}
+
+#footer #info {
+  float: right;
+  text-align: right;
+}
+
+#footer ul#social {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+
+#footer ul#social li {
+  display: inline;
+  margin: 0 4px 0 0;
+}
+
+#footer ul#social li a {
+  border: none;
 }
 
 #footer a {
@@ -188,5 +235,5 @@ Footer
 
 #footer ul#menu-footer li {
   display: inline;
-  padding: 0 10px 0 0;
+  padding: 0 0 0 10px;
 }

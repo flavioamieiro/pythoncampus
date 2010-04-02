@@ -1,0 +1,13 @@
+# This is a sample postactivate for virtualenvwrapper 
+# to ease the project's development environment setup.
+#
+# To use just copy it to your $VIRTUAL_ENV/bin directory and 
+# reactivate your virtualenv.
+
+PROJECT_ROOT="$VIRTUAL_ENV/src"
+PYTHONPATH="$PROJECT_ROOT/src:$PROJECT_ROOT/lib:$PROJECT_ROOT"
+DJANGO_SETTINGS="$PROJECT_ROOT/project/settings.py"
+
+export PYTHONPATH DJANGO_SETTINGS
+
+alias run="python $PROJECT_ROOT/project/manage.py runserver"

@@ -7,24 +7,26 @@
 	<meta name="keywords" content="python, palestra, universidade, programação" />
   	<meta http-equiv='content-Language' content='pt-BR' />
 {% endblock meta %}
-  	<link type="image/x-icon" href="favicon.ico" rel="shortcut icon" />
+  	<link type="image/x-icon" href="{{ MEDIA_URL }}favicon.ico" rel="shortcut icon" />
 
         <title>{% block subtitle %}{% endblock subtitle %} &raquo; PythonCampus.org</title>
 
 	<link type="text/css" href="{{ MEDIA_URL }}css/styles.css" rel="stylesheet" media="screen" />
 	<link type="text/css" href="{{ MEDIA_URL }}css/print.css" rel="stylesheet" media="print" />
 
-    <script type="text/javascript" src="js/jquery-1.4.min.js"></script>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
 {% block extra_head %}{% endblock %}
+
 </head>
 <body>
   <div id="page">
     <div id="header">
       <div id="logo"><a href="/">Python<span>Campus</span></a></div>
       <ul id="menu">
-        <li><a href="/sobre/">Sobre</a></li>
+        <li><a href="/sobre/">Sobre</a> / <a href="/about/">About</a></li>
         <li><a href="/contato/">Contato</a></li>
         <li><a href="/eu-quero-uma-pythoncampus-na-minha-universidade/">Eu quero!</a></li>
+	<li><a href="/making-of/">Making of</a></li>
       </ul>
     </div>
     <hr />
@@ -34,12 +36,23 @@
     </div>
     <hr />
     <div id="footer">
-      <p>&copy PythonCampus</p>
+      <ul id="social">
+        <li><a href="http://twitter.com/pythonrio"><img src="{{ MEDIA_URL }}images/twitter.png" alt="Twitter" /></a><li>
+        <li><a href="http://www.facebook.com/group.php?gid=258083843574"><img src="{{ MEDIA_URL }}images/facebook.png" alt="Facebook" /></a></li>
+        <li><a href="http://www.orkut.com.br/Main#Community?cmm=97922250"><img src="{{ MEDIA_URL }}images/orkut.png" alt="Orkut" /></a></li>
+        <li><a href="http://www.flickr.com/photos/pythoncampus"><img src="{{ MEDIA_URL }}images/flickr.png" alt="Flickr" /></a></li>
+        <li><a href="http://www.youtube.com/pythoncampus"><img src="{{ MEDIA_URL }}images/youtube.png" alt="Youtube" /></a></li>
+        <!---li><a href="#"><img src="images/vimeo.png" alt="Vimeo" /></a></li-->
+      </ul>
+      <div id="info">
+      <p>&copy PythonCampus | <a href="http://smallactsmanifesto.org/">Small Acts</a></p>
       <ul id="menu-footer">
-        <li><a href="/sobre/">Sobre</a></li>
+        <li><a href="/sobre/">Sobre</a> / <a href="/about/">About</a></li>
         <li><a href="/contato/">Contato</a></li>
         <li><a href="/eu-quero-uma-pythoncampus-na-minha-universidade/">Eu quero!</a></li>
+        <li><a href="/making-of/">Making of</a></li>
       </ul>
+      </div>
     </div>
   </div>
 <script type="text/javascript">

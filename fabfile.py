@@ -7,75 +7,113 @@ from fabric.api import *
 from fabric.contrib.files import upload_template
 
 
-def setup():
-    run('mkdir -p ~/srv')
+# Remote directory monitored by Dreamhost's passenger
+env.server_site = '~/pythoncampus.org'
+env.server_source = '~/srv'
+
+# Set the working directory to the root of our repo,
+# assuming that fabfile is on it.
+os.chdir(os.path.dirname(__file__))
+
+
+def setup_server():
+    """
+    Setup a host server. Run this once before the first deploy.
+    """
+    # Create the directory that will store deployed packages.
+    # Assume we'll have only one project per Dreamhost user.
+    run("mkdir -p %(server_source)s" % env)
+
+    # Prompt for database configurations.
     prompt('What database engine?', 'db_engine', 'mysql')
     prompt('What database name?', 'db_name', 'pythoncampus')
     prompt('What database host?', 'db_host')
     prompt('What database user?', 'db_user')
     prompt('What database password?', 'db_passwd')
 
-    upload_template('project/local_settings.example',
-        '~/srv/local_settings.py', env)
+    # Render local_settings.py with specific server configurations.
+    server_local_settings = "%(server_source)s/local_settings.py" % env
+    upload_template('project/local_settings.example', 
+        server_local_settings, env)
 
-##
-# Entry-point commands
-##
+
 def deploy(**kwargs):
-    "Deploy the contents of a given revision"
-    if 'rev' in kwargs:
-        rev = kwargs['rev']
-    else:
+    """
+    Deploy a given project revision to the server.
+    """
+    rev = kwargs.get('rev')
+    if not rev:
         print 'ERROR: No revision given. Cannot deploy.'
         print 'To deploy the current revision, use the following command:'
         print '$ fab deploy:rev=`git rev-parse HEAD`'
         sys.exit(1)
 
+    # Create a stap based on local time.
     stamp = time.strftime("%Y%m%d-%Hh%Mm%Ss")
 
+    # Before deployment, run the tests locally.
     #run_test()
 
-    upload_project(rev, stamp)
-    set_current(stamp)
-    #migrate()
-    run('pkill python')
-    
+    # Deploy
+    _upload_project(rev, stamp)
+    _activate_package(stamp)
+    #server_migrate()
+
     # Tag the deployed revision
     local("git tag -a deploy/%s %s -m ''" % (stamp, rev))
     local("git push --tags")
 
 
-def upload_project(rev, stamp):
-    "Upload project source code to the server"
-    # create the local package
-    dirname = os.path.dirname(__file__)
+def _upload_project(rev, stamp):
+    """
+    Upload a specified revision to the server
+    """
+    require('server_source')
     package = '%s.zip' % stamp
-    local('cd %s && git archive --format=zip --output=%s --prefix=%s/ %s' % \
-        (dirname, package, stamp, rev))
 
-    # put it on the server
-    run('mkdir -p ~/srv')
-    put(package, '~/srv/%s' % package)
+    # Create a zip package with a specified revision.
+    local('git archive --format=zip --output=%s --prefix=%s/ %s' % \
+        (package, stamp, rev))
 
-    # unpack it
-    with cd('~/srv'):
+    # Put the package on the server.
+    server_package = os.path.join(env.server_source, package)
+    put(package, server_package)
+
+    # Unpack it on the server.
+    with cd(env.server_source):
         run('unzip %s' % stamp)
-        run('rm %s' % package)
-    
-    # local cleanup
+        run('rm %s' % server_package)
+
+    # Delete the local zip file
     local('rm %s' % package)
 
-        
-def migrate():
-    "Runs the project's migrations"
-    require('project_dir', 'active_project', 'deploy_moment')
-    with cd('~/pythoncampus.org'):
-        run('./scripts/remote_migrate')
+
+def _activate_package(stamp):
+    """
+    Set the server symlink to a specific uploaded package.
+    """
+    require('server_site', 'server_source')
+    run('rm -f %(server_site)s' % env)
+    stamp_source = os.path.join(env.server_source, stamp)
+    run('ln -s %s %s' % (stamp_source, env.server_site))
+    run('rm -f %(server_site)s/project/local_settings.py' % env)
+    run('ln -s %(server_source)s/local_settings.py %(server_site)s/project/local_settings.py' % env)
 
 
-def set_current(stamp):
-    "Set a deploy_moment as the current one"
-    run('rm -f pythoncampus.org')
-    run('ln -s ~/srv/%s pythoncampus.org' % stamp)
-    run('rm -f pythoncampus.org/local_settings.py')
-    run('ln -s ~/srv/local_settings.py ~/pythoncampus.org/project/local_settings.py')
+def server_migrate():
+    """
+    Run syncdb and migrate command on the server
+    """
+    require('server_site')
+    with cd(env.server_site):
+        run("""
+            PYTHONPATH=%s/src:%s/lib:%s && \
+            python manage.py syncdb --noinput && python manage.py migrate
+            """ % (env.server_site,) * 3 )
+
+
+def server_reload():
+    """
+    Reload Dreamhost's webserver to avoid cache problems.
+    """
+    run('pkill python')
