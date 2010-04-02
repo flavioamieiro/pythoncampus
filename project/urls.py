@@ -14,6 +14,8 @@ urlpatterns = patterns('',
 
 urlpatterns+= patterns('django.views.generic.simple',
     (r'^$', 'direct_to_template', {'template': 'sobre.html'}),
+    
+    (r'^index2/$', 'direct_to_template', {'template': 'index2.html'}),
 
     (r'^sobre/$', 'direct_to_template', {'template': 'sobre.html'}),
 

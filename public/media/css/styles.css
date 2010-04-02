@@ -86,6 +86,30 @@ h3 {
 	color: #5f6972;
 }  
 
+h3#titulo-palestras {
+	padding: 4px 0 0 50px;
+	background: transparent url(../images/icone-palestras.png) no-repeat 6px 0;
+	height: 32px;
+}
+
+h3#titulo-outras-atividades {
+	padding: 4px 0 0 50px;
+	background: transparent url(../images/icone-outras-atividades.png) no-repeat 0 0;
+	height: 32px;
+}
+
+h3#titulo-horario {
+	padding: 4px 0 0 50px;
+	background: transparent url(../images/icone-relogio.png) no-repeat 6px 0;
+	height: 32px;
+}
+
+h3#titulo-como-chegar {
+	padding: 4px 0 0 50px;
+	background: transparent url(../images/icone-mapa.png) no-repeat 0 0;
+	height: 32px;
+}
+
 h4 {
 	margin: .643em 0;
 	font-weight: normal;
@@ -214,7 +238,7 @@ Content
 #content {
   margin: 0 20px;
   font-size: 1.2em;
- 	font-family: Georgia, Palatino, "Palatino Linotype", Times, serif;
+ 	font-family: Arial, Helvetica, Sans-serif;
 }
 
 #error {
@@ -242,6 +266,62 @@ Content
 #box-team {
   height: 400px;
 }
+
+.box-column {
+  width:440px;
+  margin:0;
+  padding: 0 10px 0 0;
+  float: left;
+}
+
+#preco {
+  float:right; 
+  font-weight: bold;
+  font-size: 2em;
+  color: #000;
+}
+
+.sala {
+  margin: 0;
+  font-weight: bold;
+}
+
+/*
+Tables
+*/
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 2px solid #e9e9e9;
+  border-bottom: 2px solid #e9e9e9;
+  margin: 0 0 20px 0;
+}
+
+table tr th {
+  text-align: left;
+}
+
+table tr th,
+table tr td {
+  padding: 4px;
+  vertical-align: top;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+table tr td.hora-agenda {
+  width: 60px;
+  font-size: 1.4em;
+}
+
+table tr td.descricao-agenda {
+  width: 280px;
+}
+
+table tr td .titulo-agenda {
+  font-weight: bold;
+}
+
 
 /*
 Footer

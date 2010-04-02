@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block subtitle %}About PythonCampus{% endblock subtitle %}
+
+{% block content %}
+
+  <h1>PythonCampus Petrópolis (LNCC / IST)</h1>
+
+  <h2>Quando: Maio, 22. 2010</h2>
+  <p><strong>PythonCampus</strong> é uma caravana de tecnologia que visita as universidades integrando estudantes ao mercado. Este é o evento que mostra que é possível transformar a paixão por tecnologia em uma carreira de sucesso. O evento é <strong>gratuito</strong> e aberto ao público em geral.</p>
+
+  <p>É um dia inteiro repleto de palestras, mini-cursos, <a href="http://dojorio.org">dojos</a> e open spaces, onde todos participam compartilhando experiências enquanto fazem novos bons amigos. O dia termina com uma grande confraternização aos moldes do tradicional <a href="http://horaextra.org">#horaextra</a>.</p>
+
+  <div class="box-column">
+    <h3 id="titulo-horario">Horário</h3>
+    
+    <p>A <strong>PythonCampus Petrópolis</strong> acontecerá das <strong>09:00h</strong> às <strong>15:00h</strong></p>
+    
+    <h3 id="titulo-palestras">Palestras</h3>
+    <p class="sala">Sala 1</p>
+    
+    <table>
+      <tbody>
+        <tr>
+         <td class="hora-agenda">09:00</td>
+         <td>
+          <div class="titulo-agenda">Introdução ao Python</div>
+          <div class="palestrante">Henrique Bastos</div>
+         </td>
+        </tr>
+        <tr>
+         <td class="hora-agenda">09:00</td>
+         <td>
+          <div class="titulo-agenda">Introdução ao Python</div>
+          <div class="palestrante">Henrique Bastos</div>
+         </td>
+        </tr>
+        <tr>
+         <td class="hora-agenda">09:00</td>
+         <td>
+          <div class="titulo-agenda">Introdução ao Python</div>
+          <div class="palestrante">Henrique Bastos</div>
+         </td>
+        </tr>
+        <tr>
+         <td class="hora-agenda">09:00</td>
+         <td>
+          <div class="titulo-agenda">Introdução ao Python</div>
+          <div class="palestrante">Henrique Bastos</div>
+         </td>
+        </tr>
+      <tbody>
+    </table>
+    
+    <h3 id="titulo-outras-atividades">Outras atividades</h3>
+    
+    <p class="sala">Sala 2</p>
+    <table>
+      <tbody>
+        <tr>
+         <td class="hora-agenda">09:00</td>
+         <td class="descricao-agenda">
+          <div class="titulo-agenda">Arena de programação DojoRio</div>
+          <div class="palestrante">Moderador: Henrique Bastos</div>
+         </td>
+         <td><a href="#">saiba mais</a></td>
+        </tr>
+      <tbody>
+    </table>
+    
+    <p class="sala">Sala 3</p>
+    
+      <table>
+      <tbody>
+        <tr>
+         <td class="hora-agenda">09:00</td>
+         <td class="descricao-agenda">
+          <div class="titulo-agenda">Oficinas</div>
+         </td>
+         <td><a href="#">saiba mais</a></td>
+        </tr>
+      <tbody>
+    </table>
+  </div>
+
+  <div class="box-column">
+    
+    <h3 id="titulo-como-chegar">Como chegar?</h3>
+
+    <div id="endereco">
+      <p><strong>LNCC (Laboratório Nacional de Computação Científica)</strong></p>
+      <p>Avenida Presidente Getulio Vargas, número 333<br />Petrópolis, RJ. CEP 25651-070<br />Telefone: (24) 2233-6000</p>
+    </div>
+
+     <div id="mapa">  
+        <iframe width="425" height="250" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Laboratorio+Nacional+de+Computa%C3%A7%C3%A3o+Cient%C3%ADfica&amp;sll=-22.529692,-43.216937&amp;sspn=0.003513,0.006968&amp;ie=UTF8&amp;hq=Laboratorio+Nacional+de+Computa%C3%A7%C3%A3o+Cient%C3%ADfica&amp;hnear=&amp;ll=-22.529692,-43.216937&amp;spn=0.003513,0.006968&amp;output=embed"></iframe>
+     </div>
+   
+    <p><img src="{{ MEDIA_URL }}images/lncc_ist_logo.gif" alt="IST / LNCC" /></p>
+  </div>
+
+  <div style="clear: both;"></div>
+
+{% endblock content %}
