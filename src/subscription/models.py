@@ -4,17 +4,15 @@ from django.db import models
 from utils import generate_confirmation_key
 
 
-class Signatory(models.Model):
+class Subscription(models.Model):
     """
-    Manifesto's signatory
+    PythonCampus's subscription
     """
-    name = models.CharField("Name", max_length=200)
-    email = models.EmailField("E-mail", unique=True)
-    url = models.URLField("Url", blank=True)
-    location = models.CharField("Location", max_length=200, blank=True)
+    name = models.CharField(max_length=200)
+    email = models.EmailField(unique=True)
 
-    signed_at = models.DateTimeField("Signed At", auto_now_add=True)
-    is_active = models.BooleanField("Is active?", default=False)
+    signed_at = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=False)
 
     confirmation_key = models.CharField(max_length=40)
 
@@ -29,4 +27,4 @@ class Signatory(models.Model):
         if not self.confirmation_key:
             self.confirmation_key = generate_confirmation_key(self.email)
 
-        return super(Signatory, self).save(*args, **kwargs)
+        return super(Subscription, self).save(*args, **kwargs)

@@ -4,4 +4,4 @@ from django.contrib import admin
 import models
 
 
-admin.site.register(models.Signatory, admin.ModelAdmin)
+admin.site.register(models.Subscription, admin.ModelAdmin)

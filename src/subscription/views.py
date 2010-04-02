@@ -3,51 +3,53 @@ from django.shortcuts import render_to_response, redirect
 from django.core.urlresolvers import reverse
 from django.conf import settings
 
-from models import Signatory
-from forms import SignatoryForm
+from models import Subscription
+from forms import SubscriptionForm
 from utils import send_email_confirmation
 
 
 def new(request):
-    form = SignatoryForm()
+    form = SubscriptionForm()
     context = {
         'MEDIA_URL': settings.MEDIA_URL,
         'form': form
     }
-    return render_to_response('signatures/form.html', context)
+    return render_to_response('subscription/form.html', context)
 
 def create(request):
-    form = SignatoryForm(request.POST)
+    form = SubscriptionForm(request.POST)
     context = {
         'MEDIA_URL': settings.MEDIA_URL,
         'form': form
     }
     try:
-        signatory = form.save_if_new()
-        send_email_confirmation(signatory)
+        subscription = form.save_if_new()
+        send_email_confirmation(subscription)
     except ValueError:
-        return render_to_response('signatures/form.html', context)
-    return render_to_response('signatures/signed.html', context)
+        return render_to_response('subscription/form.html', context)
+    return render_to_response('subscription/signed.html', context)
 
 def index(request):
-    signatures = Signatory.objects.filter(is_active=True)
+    subscription = Subscription.objects.filter(is_active=True)
     context = {
         'MEDIA_URL': settings.MEDIA_URL,
-        'signatures': signatures
+        'subscription': subscription
     }
-    return render_to_response('signatures/list.html', context)
+    return render_to_response('subscription/list.html', context)
 
 def confirm_email(request, confirmation_key):
     try:
-        signatory = Signatory.objects.get(confirmation_key=confirmation_key)
-        signatory.is_active = True
-        signatory.save()
-    except Signatory.DoesNotExist:
+        subscription = Subscription.objects.get(
+            confirmation_key=confirmation_key
+        )
+        subscription.is_active = True
+        subscription.save()
+    except Subscription.DoesNotExist:
         raise Http404
 
     context = {
         'MEDIA_URL': settings.MEDIA_URL,
-        'signatory': signatory,
+        'subscription': subscription,
     }
-    return render_to_response('signatures/confirmed.html', context)
+    return render_to_response('subscription/confirmed.html', context)
 

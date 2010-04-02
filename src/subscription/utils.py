@@ -18,13 +18,13 @@ def generate_activate_url(confirmation_key):
     path = reverse("confirm_email", args=[confirmation_key])
     return u"http://%s%s" % (unicode(current_site.domain), path)
 
-def send_email_confirmation(signatory):
+def send_email_confirmation(subscription):
     context = {
-        "name": signatory.name,
-        "activate_url": generate_activate_url(signatory.confirmation_key),
-        "confirmation_key": signatory.confirmation_key,
+        "name": subscription.name,
+        "activate_url": generate_activate_url(subscription.confirmation_key),
+        "confirmation_key": subscription.confirmation_key,
     }
-    subject = render_to_string("signatures/mail_subject.txt", context)
-    message = render_to_string("signatures/mail_message.txt", context)
+    subject = render_to_string("subscription/mail_subject.txt", context)
+    message = render_to_string("subscription/mail_message.txt", context)
     send_mail(subject, message, settings.DEFAULT_FROM_EMAIL,
-              [signatory.email, settings.DEFAULT_FROM_EMAIL])
+              [subscription.email, settings.DEFAULT_FROM_EMAIL])

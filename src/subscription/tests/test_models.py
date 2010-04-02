@@ -1,7 +1,7 @@
 from datetime import datetime as dt
 from django.test import TestCase
 from django.db import IntegrityError
-from signatures.models import Signatory
+from subscription.models import Subscription
 
 
 __all__ = ['TestModels']
@@ -10,15 +10,13 @@ __all__ = ['TestModels']
 def factory(**kwargs):
     param = dict(name="Henrique Bastos", 
                  email="henrique@bastos.net",
-                 url="http://henriquebastos.net", 
-                 location="Rio de Janeiro/Brazil",
                  confirmation_key="somecrazyhash")
     param.update(**kwargs)
-    return Signatory(**param)
+    return Subscription(**param)
 
 
 class TestModels(TestCase):
-    def test_add_new_signatory(self):
+    def test_add_new_subscription(self):
         s = factory()
         s.save()
         self.assertEquals(s.id, 1L)
@@ -32,21 +30,12 @@ class TestModels(TestCase):
         self.assertEquals(s1.id, 1L)
         self.assertRaises(IntegrityError, s2.save)
 
-    def test_add_with_empty_url(self):
-        s = factory(url="")
-        s.save()
-        self.assertEquals(s.id, 1L)
-
     def test_raises_on_blank_name(self):
         s = factory(name=None)
         self.assertRaises(IntegrityError, s.save)
 
     def test_raises_on_blank_email(self):
         s = factory(email=None)
-        self.assertRaises(IntegrityError, s.save)
-
-    def test_raises_on_blank_location(self):
-        s = factory(location=None)
         self.assertRaises(IntegrityError, s.save)
 
     def test_ordered_asc(self):
@@ -57,7 +46,7 @@ class TestModels(TestCase):
         sa = factory(name="a", email="a@b.com")
         sa.save()
 
-        ordered_list = list(Signatory.objects.all())
+        ordered_list = list(Subscription.objects.all())
         self.assertEquals(ordered_list, [sa, sb, sc])
 
 
