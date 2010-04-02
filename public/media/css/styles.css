@@ -66,14 +66,14 @@ h4 {
 h1 {
 	font-weight: normal;
 	font-size: 2.2em;
-	text-align: left; 		
+	text-align: left;
 	color: #831A00;
-} 
- 
+}
+
 h2 {
 	margin: .643em 0;
 	font-weight: normal;
-	font-size: 1.8em; 
+	font-size: 1.8em;
 	color: #E6AC0C;
 	font-style: italic;
 	clear: both;
@@ -84,14 +84,14 @@ h3 {
 	font-weight: normal;
 	font-size: 1.45em;
 	color: #5f6972;
-}  
+}
 
 h4 {
 	margin: .643em 0;
 	font-weight: normal;
-	font-size: 1.4em; 
+	font-size: 1.4em;
 	color: #5f6972;
-}  
+}
 
 
 /*
@@ -148,13 +148,73 @@ Header
 }
 
 /*
+Forms
+*/
+
+form {
+  margin: 20px 0;
+  padding: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 20px;
+}
+
+form div {
+  padding: 0 0 5px 0;
+}
+
+form input {
+  font-size: 1.1em;
+  padding: 2px;
+  display: block;
+  width: 400px;
+}
+
+.error {
+  color: #900;
+}
+
+form p {
+  margin: -35px 0 0 440px;
+  padding: 8px;
+  width: 300px;
+  position: absolute;
+  border: 1px solid #033649;
+  background-color: #036564;
+  color: #fff;
+  font-size: .9em;
+  font-family: Arial, Helvetica, Sans-Serif;
+}
+
+form p em {
+  font-size: 1.2em;
+  display: block;
+}
+
+.info_label {
+  display: none;
+}
+
+.button {
+  width: 200px;
+  text-align: center;
+  padding: 4px;
+  font-size: 1.1em;
+  background-color: #031634;
+  color: #fff;
+  border: none;
+}
+
+/*
 Content
 */
 
 #content {
   margin: 0 20px;
   font-size: 1.2em;
- 	font-family: Georgia, Palatino, "Palatino Linotype", Times, serif;
+  font-family: Arial, Georgia, Palatino, "Palatino Linotype", Times, serif;
 }
 
 #error {

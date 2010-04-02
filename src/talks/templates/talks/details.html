@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block subtitle %}{{ talk.title }}{% endblock subtitle %}
+
+{% block content %}
+<div>
+    <h1>{{ talk.title }}</h1>
+        {{ talk.day|date:"d/m/Y"}} - {{talk.start_time|time:"H:i" }}
+        {% if talk.duration %}
+            <br/> duração: {{ talk.duration }}
+        {% endif %}
+
+    <p>{{ talk.description }}</p>
+</div>
+{% include "talks/speakers.html" %}
+
+<h3>Material sobre a palestra</h3>
+<div>
+    {% if talk.media_code %}
+        {{ talk.media_code|safe }}
+    {% endif %}
+</div>
+{% endblock content %}

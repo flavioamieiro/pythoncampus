@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block subtitle %}Palestras{% endblock subtitle %}
+
+{% block content %}
+{% for talk in talks %}
+        <div>
+            <h2> <a href="{% url details talk.day.year,talk.day.month,talk.day.day,talk.slug %}">{{ talk.title }}</a></h2>
+            <span>{{ talk.day|date:"d/m/Y"}} - {{talk.start_time|time:"H:i" }}</span> <span>duração: {{ talk.duration }}</span>
+            <p>{{ talk.description }}</p>
+            {% if talk.speaker_site %}
+                <address><a href="{{ talk.speaker_site }}">{{ talk.speaker_name }}</a></address>
+            {% else %}
+                <address>{{ talk.speaker_name }}</address>
+            {% endif %}
+        </div>
+{% endfor %}
+{% endblock content %}

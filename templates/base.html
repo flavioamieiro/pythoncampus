@@ -5,15 +5,18 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="description" content="PythonCampus" />
 	<meta name="keywords" content="python, palestra, universidade, programação" />
-  	<meta http-equiv='content-Language' content='pt-BR' /> 
+  	<meta http-equiv='content-Language' content='pt-BR' />
 {% endblock meta %}
   	<link type="image/x-icon" href="{{ MEDIA_URL }}favicon.ico" rel="shortcut icon" />
-  	
+
         <title>{% block subtitle %}{% endblock subtitle %} &raquo; PythonCampus.org</title>
-        
+
 	<link type="text/css" href="{{ MEDIA_URL }}css/styles.css" rel="stylesheet" media="screen" />
-	
+	<link type="text/css" href="{{ MEDIA_URL }}css/print.css" rel="stylesheet" media="print" />
+
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+{% block extra_head %}{% endblock %}
+
 </head>
 <body>
   <div id="page">
@@ -47,7 +50,7 @@
         <li><a href="/sobre/">Sobre</a> / <a href="/about/">About</a></li>
         <li><a href="/contato/">Contato</a></li>
         <li><a href="/eu-quero-uma-pythoncampus-na-minha-universidade/">Eu quero!</a></li>
-	<li><a href="/making-of/">Making of</a></li>
+        <li><a href="/making-of/">Making of</a></li>
       </ul>
       </div>
     </div>

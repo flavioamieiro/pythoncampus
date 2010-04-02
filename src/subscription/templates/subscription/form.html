@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/form-tip.js"></script>
+
+{% load cssclass %}
+
+<h1>Eu vou!</h1>
+
+<p>Preencha o formulário abaixo para participar da PythonCampus. Este é o evento que mostra que é possível transformar a paixão por tecnologia em uma carreira de sucesso. Tudo isso compartilhando grandes experiências e fazendo novos bons amigos.</p>
+
+<form action="." method="POST">
+  <div class="field">
+    <label for="id_name">Nome <span>*</span></label>
+    {{ form.name }}
+    <div class="error">{{ form.name.errors.as_text }}</div>
+    <p id="info" class="info_label">
+      <small>Como te chamam? ;-)</small>
+    </p>
+  </div>
+  <div class="field">
+    <label for="id_email">Email <span>*</span></label>
+    {{ form.email }}
+    <div class="error">{{ form.email.errors.as_text }}</div>
+    <p id="info_id_email" class="info_label">
+      <small>Seu email é importante para enviarmos a mensagem de confirmação da sua inscrição.<br /> 
+      Seu email não será publicado ou utilizado para qualquer outra finalidade.</small>
+    </p>
+  </div>
+  <input type="submit" class="button" value="Send" />
+</form>
+
+{% endblock content %}

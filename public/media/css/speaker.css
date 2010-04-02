@@ -1,0 +1,7 @@
+.left { float: left; }
+.photo { width: 100px; padding: 20px; }
+.desc { width: 80%; }
+h4 { padding: 0px; font-size: 12pt; }
+#speaker { height: 100%; }
+#speaker ul, #speaker li { padding: 0px; margin: 0px; list-style-type: none; }
+#speaker ul { margin-top: 10px; }

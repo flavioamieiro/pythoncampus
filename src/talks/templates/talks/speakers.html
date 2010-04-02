@@ -1,0 +1,33 @@
+{% block extra_head %}
+    <link type="text/css" href="{{ MEDIA_URL }}css/speaker.css" rel="stylesheet" media="screen" />
+{% endblock %}
+
+<h3>Sobre o palestrante</h3>
+<div id="speaker">
+
+   <div class="left photo">
+       {% if talk.speaker.photo_url %}
+           <img src="{{ talk.speaker.photo_url }}" alt="Foto" width="100" height="110" border="0"/>
+       {% else %}
+           <img src="" width="100" height="110" border="0"/>
+       {% endif %}
+   </div>
+
+   <div class="left desc">
+
+       <h4>{{ talk.speaker.name }}</h4>
+
+       <p>{{ talk.speaker.description }}</p>
+
+       <ul>
+           <li><a href="{{ talk.speaker.site }}" title="Website">{{ talk.speaker.site }}</a></li>
+           <li><a href="mailto:{{ talk.speaker.email }}" title="E-mail">{{ talk.speaker.email }}</a></li>
+       </ul>
+
+   </div>
+
+   <div style="clear:both;"></div>
+
+</div>
+<br/>
+{#% endblock content %#}
