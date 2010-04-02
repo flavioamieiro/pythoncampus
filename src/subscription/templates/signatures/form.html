@@ -4,15 +4,15 @@
 
 {% load cssclass %}
 
-<h1>Get involved</h1>
+<h1>Quero participar!</h1>
 
 <form action="." method="POST">
   <div class="field">
-    <label for="id_name">Name <span>*</span></label>
+    <label for="id_name">Nome <span>*</span></label>
     {{ form.name }}
     <div class="error">{{ form.name.errors.as_text }}</div>
     <p id="info" class="info_label">
-      <small>Your name to be shown on the signatories list.</small>
+      <small>Como te chamam? ;-)</small>
     </p>
   </div>
   <div class="field">
@@ -20,8 +20,8 @@
     {{ form.email }}
     <div class="error">{{ form.email.errors.as_text }}</div>
     <p id="info_id_email" class="info_label">
-      <small>Your email is important so we can send you a confirmation email.<br /> 
-      Your email will not be published or used in any other way.</small>
+      <small>Seu email é importante para enviarmos a mensagem de confirmação da sua inscrição.<br /> 
+      Seu email não será publicado ou utilizado para qualquer outra finalidade.</small>
     </p>
   </div>
   <input type="submit" class="button" value="Send" />
