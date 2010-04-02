@@ -7,7 +7,7 @@ class Speaker(models.Model):
     url = models.URLField(verify_exists=False, blank=True)
     email = models.EmailField()
     description = models.TextField()
-    photo = models.ImageField(upload_to='speaker_photos')
+    photo_url = models.URLField(verify_exists=False)
 
     def __unicode__(self):
         return self.name
