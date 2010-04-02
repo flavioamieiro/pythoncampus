@@ -5,15 +5,16 @@
 {% block content %}
 <div>
     <h1>{{ talk.title }}</h1>
-    <ul style="list-style-type: none">
-        <li>{{ talk.day|date:"d/m/Y"}} - {{talk.start_time|time:"H:i" }}</li>
+        {{ talk.day|date:"d/m/Y"}} - {{talk.start_time|time:"H:i" }}
         {% if talk.duration %}
-            <li> duração: {{ talk.duration }}</li>
+            <br/> duração: {{ talk.duration }}
         {% endif %}
-    </ul>
+
     <p>{{ talk.description }}</p>
 </div>
 {% include "talks/speakers.html" %}
+
+<h3>Material sobre a palestra</h3>
 <div>
     {% if talk.media_code %}
         {{ talk.media_code|safe }}

@@ -1,14 +1,8 @@
-<style type="text/css">
-.left { float: left; }
-.photo { width: 100px; padding: 20px; }
-.desc { width: 80%; font-size: 12pt;  }
-h4 { padding: 0px; font-size: 14pt; }
-#speaker { height: 100%; }
-#speaker ul, #speaker li { padding: 0px; margin: 0px; list-style-type: none; }
-#speaker ul { margin-top: 10px; }
-</style>
+{% block extra_head %}
+    <link type="text/css" href="{{ MEDIA_URL }}css/speaker.css" rel="stylesheet" media="screen" />
+{% endblock %}
 
-
+<h3>Sobre o palestrante</h3>
 <div id="speaker">
 
    <div class="left photo">
