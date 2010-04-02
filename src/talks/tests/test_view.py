@@ -4,7 +4,7 @@ from django.test import TestCase
 from django.core.urlresolvers import reverse
 from django.db.models.query import QuerySet
 
-from talks.models import Talk
+from talks.models import Talk, Speaker
 
 __all__ = ['TalksView', 'TalkDetailView']
 
@@ -21,6 +21,12 @@ class TalkDetailView(TestCase):
 
     def test_talk_should_be_in_context(self):
 
+        speaker = Speaker(
+            name = 'Santa Claus',
+            url = 'www.north_pole.net',
+            email = 'admin@north_pole.net',
+        )
+        speaker.save()
         talk = Talk(
             title = 'Title',
             slug = 'title',
@@ -29,9 +35,7 @@ class TalkDetailView(TestCase):
             start_time = datetime.time(10, 10),
             duration = '1 hour',
             place = 'Room 756',
-            speaker_name = 'Santa Claus',
-            speaker_site = 'www.north_pole.net',
-            speaker_email = 'admin@north_pole.net',
+            speaker = speaker,
         )
         talk.save()
 
@@ -43,9 +47,7 @@ class TalkDetailView(TestCase):
             start_time = datetime.time(10, 10),
             duration = '50 minutes',
             place = 'Room 765',
-            speaker_name = 'Santa Claus',
-            speaker_site = 'www.north_pole.net',
-            speaker_email = 'admin@north_pole.net',
+            speaker = speaker,
         )
         second_talk.save()
 
@@ -63,3 +65,4 @@ class TalkDetailView(TestCase):
 
         talk.delete()
         second_talk.delete()
+        speaker.delete()

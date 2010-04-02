@@ -12,7 +12,11 @@ h4 { padding: 0px; font-size: 14pt; }
 <div id="speaker">
 
    <div class="left photo">
-       <img src="{{ talk.speaker.photo.url }}" alt="Foto" width="100" height="110" border="0"/>
+       {% if talk.speaker.photo %}
+           <img src="{{ talk.speaker.photo.url }}" alt="Foto" width="100" height="110" border="0"/>
+       {% else %}
+           <img src="" width="100" height="110" border="0"/>
+       {% endif %}
    </div>
 
    <div class="left desc">
