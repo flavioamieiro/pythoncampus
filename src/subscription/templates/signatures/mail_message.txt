@@ -1,11 +1,11 @@
-Hello {{ name }}!
+Olá {{ name }}!
 
-You have just signed up for the Small Acts Manifesto.
+Você acabou de se inscrever para participar da PythonCampus.
 
-To confirm your subscription please access the link:
+Para confirmar sua inscrição acesse o link:
 
 {{ activate_url }}
 
-All the best,
+Obrigado!
 --
-SmallActsManifesto.org
+PythonCampus.org
