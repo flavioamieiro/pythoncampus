@@ -30,6 +30,8 @@ urlpatterns+= patterns('django.views.generic.simple',
     (r'^contato/$', 'direct_to_template', {'template': 'contact.html'}),
 
     (r'^making-of/$', 'direct_to_template', {'template': 'making-of.html'}),
+
+    (r'^oficina/$', 'direct_to_template', {'template': 'oficina.html'}),
 )
 if settings.DEBUG:
     urlpatterns += patterns('',
