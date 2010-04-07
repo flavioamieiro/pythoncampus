@@ -288,6 +288,30 @@ Content
 }
 
 /*
+ Coding Dojo
+*/
+
+div.image-container{
+    text-align: center;
+}
+
+div.image-container p{
+    font-size: small;
+    color: #333;
+    margin: .5em 35px;
+}
+
+div.image-container,
+div#dojo-content{
+    float: left;
+    width: 50%;
+}
+
+div.image-container{
+    margin: 4.5em 0;
+}
+
+/*
 Tables
 */
 

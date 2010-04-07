@@ -31,6 +31,8 @@ urlpatterns+= patterns('django.views.generic.simple',
 
     (r'^making-of/$', 'direct_to_template', {'template': 'making-of.html'}),
 
+    (r'^dojorio/$', 'direct_to_template', {'template': 'coding-dojo.html'}),
+
     (r'^oficina/$', 'direct_to_template', {'template': 'oficina.html'}),
 )
 if settings.DEBUG:
