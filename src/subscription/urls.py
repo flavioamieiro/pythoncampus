@@ -5,6 +5,6 @@ from views import new, create, index, confirm_email
 
 
 urlpatterns = patterns('',
-    route(r'^eu-vou/$', GET=new, POST=create, name='signup'),
-    url(r'^eu-vou/confirmar/(\w+)/$', confirm_email, name='confirm_email'),
+    route(r'inscricao/$', GET=new, POST=create, name='signup'),
+    url(r'inscricao/confirmar/(\w+)/$', confirm_email, name='confirm_email'),
 )

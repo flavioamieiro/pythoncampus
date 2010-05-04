@@ -12,8 +12,6 @@ urlpatterns = patterns('',
 
     (r'^palestras/', include('talks.urls')),
     (r'', include('server.urls')),
-    # subscription
-    (r'^', include('subscription.urls')),
 )
 
 talks = ({
@@ -63,7 +61,9 @@ urlpatterns+= patterns('django.views.generic.simple',
     (r'^dojorio/$', 'direct_to_template', {'template': 'coding-dojo.html'}),
 
     (r'^oficina/$', 'direct_to_template', {'template': 'oficina.html'}),
-    (r'^event/$', 'direct_to_template', {'template': 'event.html', 'extra_context': {'talks': talks} }),
+    (r'^event/istcc-p/$', 'direct_to_template', {'template': 'event.html', 'extra_context': {'talks': talks} }),
+    # subscription
+    (r'^event/istcc-p/', include('subscription.urls')),
 )
 if settings.DEBUG:
     urlpatterns += patterns('',
