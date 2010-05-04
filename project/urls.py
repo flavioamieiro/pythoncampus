@@ -31,7 +31,7 @@ talks = (
     Atualmente é professor do Instituto Federal Fluminense e membro do Núcleo de Pesquisa em Sistemas de Informação (NSI-IFF). Tem experiência na área de Ciência da Computação com ênfase em algoritmos genéticos, programação paralela e segmentação de vídeo.
     """,
     'speaker_url': '',
-    'speaker_img': '/media/images/fabio_duncan.jpg',
+    'speaker_img': '/media/images/palestrantes/fabio_duncan.jpg',
     },
     {
     'title': 'Palestra Técnica',
