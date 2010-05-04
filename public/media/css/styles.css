@@ -362,6 +362,21 @@ Talks
 }
 
 /*
+Sidebar
+*/
+
+#sidebar {
+    float: right;
+}
+
+#sidebar a,
+#sidebar a:hover,
+#sidebar a:link,
+#sidebar a:active,
+#sidebar a:visited {
+    border: none;
+}
+/*
 Footer
 */
 
