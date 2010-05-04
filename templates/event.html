@@ -13,7 +13,11 @@
 
 <p><strong>PythonCampus</strong> é uma caravana de tecnologia que visita as universidades integrando estudantes ao mercado. Este é o evento que mostra que é possível transformar a paixão por tecnologia em uma carreira de sucesso. O evento é <strong>gratuito</strong> e aberto ao público em geral.</p>
 
-<h2>Palestras</h2>
+<h2>Onde e Quando?</h2>
+
+<p>O evento acontecerá no dia <strong>22 de maio de 2010</strong> (sábado) das <strong>9:00 às 15:00</strong> no <a href="http://www.lncc.br/ist/">Instituto Superior de Tecnologia em Ciências da Computação de Petrópolis (ISTCC-P)</a> localizado na <a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=Avenida+Presidente+Get%C3%BAlio+Vargas+333+-+Petr%C3%B3polis+-+RJ+CEP:+25651-070&sll=-22.880766,-43.104335&sspn=0.300494,0.628281&ie=UTF8&hq=Avenida+Presidente+Get%C3%BAlio+Vargas+333+-+Petr%C3%B3polis+-+RJ+CEP:+25651-070&hnear=&ll=-22.409759,-43.161163&spn=0.603052,1.256561&z=10&iwloc=A" title="Veja o mapa...">Avenida Presidente Getúlio Vargas 333 - Petrópolis - RJ CEP: 25651-070</a>.
+
+
 <h2>Agenda</h2>
 
 {% for talk in talks %}
@@ -37,8 +41,20 @@
   </td></tr>
   <tr><td><a href="{{ talk.speaker_url }}">{{ talk.speaker_url }}</a></td></tr>
 </table>
+{% endif %}
 <br />
 {% endfor %}
-</div>
 
+<h2>Outras Atividades</h2>
+<div class="header">
+  Arena de Programação Dojorio
+  <span>Sala 1</span>
+</div>
+<br />
+<div class="header">
+  Oficina Django
+  <span>Sala 2</span>
+</div>
+<br />
+</div>
 {% endblock content %}
