@@ -34,7 +34,7 @@ talks = (
     'speaker_img': '/media/images/palestrantes/fabio_duncan.jpg',
     },
     {
-    'title': 'Palestra Técnica',
+    'title': 'Palestra Técnica a definir',
     'time': '10:20',
     },
     {
