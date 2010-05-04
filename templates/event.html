@@ -14,12 +14,14 @@
 <p><strong>PythonCampus</strong> é uma caravana de tecnologia que visita as universidades integrando estudantes ao mercado. Este é o evento que mostra que é possível transformar a paixão por tecnologia em uma carreira de sucesso. O evento é <strong>gratuito</strong> e aberto ao público em geral.</p>
 
 <h2>Palestras</h2>
+<h2>Agenda</h2>
 
 {% for talk in talks %}
 <div class="header">
   {{ talk.title }}
   <span>{{ talk.time}}</span>
 </div>
+{% if talk.description %}
 <table border="0" cellspacing="15px" cellpadding="0">
   <tr>
     <td colspan="2">
