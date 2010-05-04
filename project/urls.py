@@ -74,7 +74,7 @@ talks = (
 
 
 urlpatterns+= patterns('django.views.generic.simple',
-    (r'^$', 'direct_to_template', {'template': 'sobre.html'}),
+    (r'^$', 'direct_to_template', {'template': 'event.html', 'extra_context': {'talks': talks} }),
     
     (r'^index2/$', 'direct_to_template', {'template': 'index2.html'}),
 
