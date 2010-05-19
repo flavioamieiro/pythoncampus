@@ -35,6 +35,20 @@ talks = (
     'speaker_img': 'http://a1.twimg.com/profile_images/889085672/palestrante_rafael_monnerat_bigger.jpg'
     },
     {
+    'title': 'Comunidades e Software Livre',
+    'time': '9:40',
+    'description': """
+    Lorem ipsum
+    """,
+    'speaker_name': u'Álvaro "Turicas" Justen',
+    'speaker_about': """
+    Graduando em Eng. de Telecomunicações pela UFF, onde desenvolve atividades de pesquisa, ensino e extensão. É desenvolvedor da Intelie e ativista de software livre há mais de 8 anos; desenvolvedor do web2py; disseminador do Arduino e entusiasta de metodologias ágeis.<br />
+    Participante assíduo de eventos e grupos de usuários, palestra e organiza eventos, como PythOnCampus, Arduino/web2py Hack Day e Dojorio.
+    """,
+    'speaker_url': 'http://www.justen.eng.br/sobre',
+    'speaker_img': 'http://www.justen.eng.br/img/rosto.jpg',
+    },
+    {
     'title': '"Uma Experiência Acadêmica com Python"',
     'time': '10:20',
     'description': """
