@@ -34,8 +34,19 @@ talks = (
     'speaker_img': '/media/images/palestrantes/fabio_duncan.jpg',
     },
     {
-    'title': 'Palestra Técnica a definir',
+    'title': '"Ecossistema Python"',
     'time': '10:20',
+    'description': """
+    Palestra introdutória que visa mostrar a abrangência da Linguagem de Programação Python em diversas áreas, Web, dispositivos portáteis, Cloud Computing e muitas outras. As vantagens da adoção da linguagens e suas características fundamentais, o comunidade e a mercado de trabalho que fazem parte do Ecossistema Python.
+    """,
+    'speaker_name': 'Rafael Monnerat',
+    'speaker_about':
+    """
+    Rafael é um entusiasta do software livre e membro da <a href="http://www.tiolibre.com">TioLibre</a> initiative. Trabalha desde 2006 na <a href="http://www.nexedi.com/">Nexedi SA</a> (França), empresa criadora do <a href="http://www.erp5.org">ERP5</a>, onde já participou de alguns projetos de implantações de ERP na Europa e África.<br />
+    Atualmente atua no desenvolvimento e manutenção do Provedor de ERPs Hospedados: <a href="http://www.tiolive.com">TioLive</a>. Co-autor do capítulo "ERP5: Designing for Maximum Adaptability" do Livro <a href="http://oreilly.com/catalog/9780596510046">Beautiful Code</a> entre outros artigos e capítulos de livro na area.
+    """,
+    'speaker_url': 'http://twitter.com/ramonnerat',
+    'speaker_img': 'http://a1.twimg.com/profile_images/889085672/palestrante_rafael_monnerat_bigger.jpg'
     },
     {
     'title': 'Coffee Break Reforçado',
