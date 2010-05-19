@@ -35,7 +35,7 @@ talks = (
     'speaker_img': 'http://a1.twimg.com/profile_images/889085672/palestrante_rafael_monnerat_bigger.jpg'
     },
     {
-    'title': 'Comunidades e Software Livre',
+    'title': '"Comunidades e Software Livre"',
     'time': '9:40',
     'description': """
     Palestra abrangindo os principais conceitos em torno do movimento de software livre, visando explicitar as vantagens da adoção de software livre em um projeto de software.<br />
