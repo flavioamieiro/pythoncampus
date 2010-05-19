@@ -71,9 +71,7 @@ talks = (
     'title': '"Computação visual com Python"',
     'time': '12:00',
     'description': """
-    Você é da área de tecnologia? Acredite, você está em muita vantagem!<br />
-    Conheça como funciona a sociedade e a organização do trabalho, e saiba como a Internet, o Software Livre e tecnologias como Python e Ruby podem revolucionar a sua vida.<br />
-    Aprenda a hackear o "ciclo vicioso social" e ter as rédeas o teclado da sua vida, nas suas mãos.<br />
+    Definição de Computação Visual e as diversas áreas da ciência envolvidas, com apresentação de Aplicações, Frameworks e Bibliotecas desenvolvidas em Python.
     """,
     'speaker_name': 'Jonh Edson Ribeiro de Carvalho',
     'speaker_about': 'Graduado [1997] em Física pela UFF e Mestrado [2006] em Computação também pela UFF, com Ênfase em Computação Visual e Interfaces. Professor Universitário a 10 anos, entusiasta do Movimento de Software Livre, sendo membro da SL-RJ, Debian-RJ e da PythOnRio e apoia as Culturas Livres.',
