@@ -38,7 +38,8 @@ talks = (
     'title': 'Comunidades e Software Livre',
     'time': '9:40',
     'description': """
-    Lorem ipsum
+    Palestra abrangindo os principais conceitos em torno do movimento de software livre, visando explicitar as vantagens da adoção de software livre em um projeto de software.<br />
+    Também serão abordados aspectos com relação à participação em comunidades de software livre.
     """,
     'speaker_name': u'Álvaro "Turicas" Justen',
     'speaker_about': """
