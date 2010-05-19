@@ -20,22 +20,8 @@ talks = (
     'time': '9:00',
     },
     {
-    'title': '"Uma Experiência Acadêmica com Python"',
-    'time': '9:20',
-    'description': """
-    Relato da experiência de uso da linguagem Python no Núcleo de Pesquisa em Sistemas de Informação e no ensino de programação dos cursos de computação do Instituto Federal Fluminense.
-    """,
-    'speaker_name': 'Fábio Duncan',
-    'speaker_about': """
-    Possui mestrado em Pesquisa Operacional e Inteligência Computacional pela Universidade Candido Mendes (Campos - 2008).<br />
-    Atualmente é professor do Instituto Federal Fluminense e membro do Núcleo de Pesquisa em Sistemas de Informação (NSI-IFF). Tem experiência na área de Ciência da Computação com ênfase em algoritmos genéticos, programação paralela e segmentação de vídeo.
-    """,
-    'speaker_url': '',
-    'speaker_img': '/media/images/palestrantes/fabio_duncan.jpg',
-    },
-    {
     'title': '"Ecossistema Python"',
-    'time': '10:20',
+    'time': '9:10',
     'description': """
     Palestra introdutória que visa mostrar a abrangência da Linguagem de Programação Python em diversas áreas, Web, dispositivos portáteis, Cloud Computing e muitas outras. As vantagens da adoção da linguagens e suas características fundamentais, o comunidade e a mercado de trabalho que fazem parte do Ecossistema Python.
     """,
@@ -47,6 +33,20 @@ talks = (
     """,
     'speaker_url': 'http://twitter.com/ramonnerat',
     'speaker_img': 'http://a1.twimg.com/profile_images/889085672/palestrante_rafael_monnerat_bigger.jpg'
+    },
+    {
+    'title': '"Uma Experiência Acadêmica com Python"',
+    'time': '10:20',
+    'description': """
+    Relato da experiência de uso da linguagem Python no Núcleo de Pesquisa em Sistemas de Informação e no ensino de programação dos cursos de computação do Instituto Federal Fluminense.
+    """,
+    'speaker_name': 'Fábio Duncan',
+    'speaker_about': """
+    Possui mestrado em Pesquisa Operacional e Inteligência Computacional pela Universidade Candido Mendes (Campos - 2008).<br />
+    Atualmente é professor do Instituto Federal Fluminense e membro do Núcleo de Pesquisa em Sistemas de Informação (NSI-IFF). Tem experiência na área de Ciência da Computação com ênfase em algoritmos genéticos, programação paralela e segmentação de vídeo.
+    """,
+    'speaker_url': '',
+    'speaker_img': '/media/images/palestrantes/fabio_duncan.jpg',
     },
     {
     'title': 'Coffee Break Reforçado',
