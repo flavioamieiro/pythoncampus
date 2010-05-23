@@ -115,7 +115,7 @@ urlpatterns+= patterns('django.views.generic.simple',
 
     (r'^dojorio/$', 'direct_to_template', {'template': 'coding-dojo.html'}),
 
-    (r'^evento/istcc-p/slides/$', 'direct_to_template', {'template': 'slides.html'}),
+    url(r'^evento/istcc-p/slides/$', 'direct_to_template', {'template': 'slides.html'}, name="slides"),
 
     (r'^oficina/$', 'direct_to_template', {'template': 'oficina.html'}),
     (r'^evento/istcc-p/$', 'direct_to_template', {'template': 'event.html', 'extra_context': {'talks': talks} }),
