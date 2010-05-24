@@ -72,6 +72,7 @@ INSTALLED_APPS = (
     'talks',
     'server',
     'subscription',
+    'embed',
 )
 
 try:
